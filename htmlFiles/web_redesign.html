@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Palette Planner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../cssFiles/web_redesign.css" />
+</head>
+
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-top">
+          <div class="logo-row">
+            <div class="logo"></div>
+            <div class="logo-text">
+              <h1>Project Palette</h1>
+              <p>Planner</p>
+            </div>
+          </div>
+
+          <nav class="nav">
+            <a href="#" class="nav-item active"><span class="material-symbols-outlined">public</span>Website Redesign</a>
+            <a href="#" class="nav-item"><span class="material-symbols-outlined">phone_iphone</span>Mobile App Launch</a>
+            <a href="#" class="nav-item"><span class="material-symbols-outlined">code_blocks</span>API Integration</a>
+            <a href="#" class="nav-item"><span class="material-symbols-outlined">campaign</span>Marketing Campaign</a>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <button class="btn-primary">New Project</button>
+          <a href="#" class="nav-item"><span class="material-symbols-outlined">extension</span>Integrations</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="main-header">
+        <h1>Website Redesign</h1>
+        <button class="btn-secondary">+ Add Task</button>
+      </header>
+
+      <div class="filters">
+        <button class="filter-btn">Priority<span class="material-symbols-outlined">expand_more</span></button>
+        <button class="filter-btn">Assignee<span class="material-symbols-outlined">expand_more</span></button>
+        <button class="filter-btn">Due Date<span class="material-symbols-outlined">expand_more</span></button>
+      </div>
+
+      <div class="tabs">
+        <a href="#" class="tab active">Timeline</a>
+        <a href="#" class="tab">Tasks</a>
+        <a href="#" class="tab">Brief</a>
+        <a href="#" class="tab">Risk View</a>
+      </div>
+
+      <!-- Timeline -->
+      <section class="timeline">
+        <div class="timeline-header">
+          <div></div>
+          <div class="weeks">
+            <span>Aug W1</span><span>Aug W2</span><span>Aug W3</span><span>Aug W4</span>
+          </div>
+        </div>
+
+        <div class="timeline-body">
+          <div class="row">
+            <div class="label">Design</div>
+            <div class="track">
+              <div class="task" style="left:2%;width:25%;background:#AEC6CF;">Wireframing</div>
+              <div class="task" style="left:28%;width:25%;background:#9EB9C6;">UI Mockups</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label">Development</div>
+            <div class="track">
+              <div class="task" style="left:25%;width:50%;background:#C3B1E1;">Frontend & Backend Dev</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label">QA</div>
+            <div class="track">
+              <div class="task" style="left:65%;width:23%;background:#B2D8B2;">Testing & Bug Fixes</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label">Launch</div>
+            <div class="track">
+              <div class="task" style="left:90%;width:8%;background:#FFDAB9;">Go-Live</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- AI Suggestions -->
+    <aside class="ai-panel">
+      <h2>AI Suggestions</h2>
+
+      <div class="ai-card success">
+        <span class="material-symbols-outlined">auto_awesome</span>
+        <div>
+          <h3>Optimized Timeline</h3>
+          <p>Added a 2-day buffer for QA. <span class="highlight">(Confidence: 82%)</span></p>
+        </div>
+      </div>
+
+      <div class="ai-card warning">
+        <span class="material-symbols-outlined">warning</span>
+        <div>
+          <h3>Potential Roadblock</h3>
+          <p>API integration might be delayed. Consider parallel tasks.</p>
+        </div>
+      </div>
+
+      <div class="ai-card info">
+        <span class="material-symbols-outlined">arrow_forward</span>
+        <div>
+          <h3>Next Step</h3>
+          <p>Finalize design specs before starting backend integration.</p>
+        </div>
+      </div>
+
+      <div class="brief">
+        <h3>Generated Project Brief</h3>
+        <p>This project aims to overhaul the existing company website to enhance user experience, modernize the design, and improve performance. Key objectives include a mobile-first responsive design, streamlined navigation, and faster page load times...</p>
+        <button class="link">Expand Brief</button>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
