@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Project Overview Dashboard</title>
+<link rel="stylesheet" href="cssFiles/style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body>
+<div class="dashboard">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo-gradient" title="Project Palette"></div>
+      <div class="header-title">
+        <h1>Project Palette</h1>
+        <p>Dashboard</p>
+      </div>
+      <div class="search-bar">
+        <span class="material-symbols-outlined">search</span>
+        <input type="text" placeholder="Search projects..."/>
+        <button><span class="material-symbols-outlined">expand_more</span></button>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="btn-primary">New Project</button>
+      <button class="icon-btn"><span class="material-symbols-outlined">settings</span></button>
+      <button class="icon-btn"><span class="material-symbols-outlined">notifications</span></button>
+      <div class="avatar">JD</div>
+    </div>
+  </header>
+
+  <div class="content">
+    <!-- Main Projects -->
+    <main class="projects-main">
+      <h2>Project Overview</h2>
+      <div class="filters">
+        <button>Status <span class="material-symbols-outlined">expand_more</span></button>
+        <button>Team <span class="material-symbols-outlined">expand_more</span></button>
+        <button>Timeline <span class="material-symbols-outlined">expand_more</span></button>
+        <button>Clear Filters</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project Cards -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Website Redesign</h3>
+            <span class="status on-track">On Track</span>
+          </div>
+          <p>Overhaul existing website for enhanced UX and performance.</p>
+          <div class="project-meta">
+            <div><span class="material-symbols-outlined">calendar_month</span> Sep 15</div>
+            <div><span class="material-symbols-outlined">person</span> 5</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" style="width:70%"></div>
+          </div>
+          <button class="view-btn">View Details <span class="material-symbols-outlined">arrow_right_alt</span></button>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Mobile App Launch</h3>
+            <span class="status at-risk">At Risk</span>
+          </div>
+          <p>Launch new mobile application to market, focusing on user acquisition.</p>
+          <div class="project-meta">
+            <div><span class="material-symbols-outlined">calendar_month</span> Oct 30</div>
+            <div><span class="material-symbols-outlined">person</span> 7</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" style="width:40%"></div>
+          </div>
+          <button class="view-btn">View Details <span class="material-symbols-outlined">arrow_right_alt</span></button>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>API Integration</h3>
+            <span class="status in-progress">In Progress</span>
+          </div>
+          <p>Integrate with 3rd party services for data synchronization.</p>
+          <div class="project-meta">
+            <div><span class="material-symbols-outlined">calendar_month</span> Aug 28</div>
+            <div><span class="material-symbols-outlined">person</span> 3</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" style="width:85%"></div>
+          </div>
+          <button class="view-btn">View Details <span class="material-symbols-outlined">arrow_right_alt</span></button>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Marketing Campaign</h3>
+            <span class="status delayed">Delayed</span>
+          </div>
+          <p>Develop and launch a new digital marketing campaign for product X.</p>
+          <div class="project-meta">
+            <div><span class="material-symbols-outlined">calendar_month</span> Sep 01</div>
+            <div><span class="material-symbols-outlined">person</span> 4</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" style="width:25%"></div>
+          </div>
+          <button class="view-btn">View Details <span class="material-symbols-outlined">arrow_right_alt</span></button>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Q3 Financial Report</h3>
+            <span class="status not-started">Not Started</span>
+          </div>
+          <p>Compile and analyze financial data for the third quarter.</p>
+          <div class="project-meta">
+            <div><span class="material-symbols-outlined">calendar_month</span> Sep 30</div>
+            <div><span class="material-symbols-outlined">person</span> 2</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" style="width:0%"></div>
+          </div>
+          <button class="view-btn">View Details <span class="material-symbols-outlined">arrow_right_alt</span></button>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Client Onboarding Workflow</h3>
+            <span class="status in-progress">In Progress</span>
+          </div>
+          <p>Automate and streamline the process for new client onboarding.</p>
+          <div class="project-meta">
+            <div><span class="material-symbols-outlined">calendar_month</span> Sep 20</div>
+            <div><span class="material-symbols-outlined">person</span> 3</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" style="width:60%"></div>
+          </div>
+          <button class="view-btn">View Details <span class="material-symbols-outlined">arrow_right_alt</span></button>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>AI Suggestions</h2>
+      <div class="ai-suggestion">
+        <span class="material-symbols-outlined">auto_awesome</span>
+        <div>
+          <h3>Optimized Timelines</h3>
+          <p>Several projects can gain +2 days buffer. (Confidence: 82%)</p>
+        </div>
+      </div>
+      <div class="ai-suggestion">
+        <span class="material-symbols-outlined">warning</span>
+        <div>
+          <h3>Potential Roadblock</h3>
+          <p>API integration project might be delayed. Consider re-allocating resources.</p>
+        </div>
+      </div>
+      <div class="ai-suggestion">
+        <span class="material-symbols-outlined">trending_up</span>
+        <div>
+          <h3>Performance Boost</h3>
+          <p>Website Redesign project shows accelerated progress. Leverage learnings.</p>
+        </div>
+      </div>
+
+      <h3>Executive Summary</h3>
+      <div class="executive-summary">
+        <p>Overall project portfolio health is stable, with key initiatives progressing as planned. A critical risk has been identified in the API Integration project, requiring immediate attention. Opportunities exist to optimize timelines across several projects.</p>
+        <button>Read Full Report</button>
+      </div>
+    </aside>
+  </div>
+
+</div>
+</body>
+</html>
