@@ -1,140 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Palette Planner</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <link rel="stylesheet" href="../cssFiles/web_redesign.css" />
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Palette Planner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#306ee8",
+            "background-light": "#f9fafb",
+            "background-dark": "#111621",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        font-size: 22px;
+    }
+  </style>
 </head>
-
-<body>
-  <div class="app-container">
-    
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-inner">
-        <div class="sidebar-top">
-          <div class="logo-row">
-            <div class="logo"></div>
-            <div class="logo-text">
-              <h1>Project Palette</h1>
-              <p>Planner</p>
-            </div>
-          </div>
-
-          <nav class="nav">
-            <a href="#" class="nav-item active"><span class="material-symbols-outlined">public</span>Website Redesign</a>
-            <a href="#" class="nav-item"><span class="material-symbols-outlined">phone_iphone</span>Mobile App Launch</a>
-            <a href="#" class="nav-item"><span class="material-symbols-outlined">code_blocks</span>API Integration</a>
-            <a href="#" class="nav-item"><span class="material-symbols-outlined">campaign</span>Marketing Campaign</a>
-          </nav>
-        </div>
-
-        <div class="sidebar-bottom">
-          <button class="btn-primary">New Project</button>
-          <a href="#" class="nav-item"><span class="material-symbols-outlined">extension</span>Integrations</a>
-        </div>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main">
-      <header class="main-header">
-        <h1>Website Redesign</h1>
-        <button class="btn-secondary">+ Add Task</button>
-      </header>
-
-      <div class="filters">
-        <button class="filter-btn">Priority<span class="material-symbols-outlined">expand_more</span></button>
-        <button class="filter-btn">Assignee<span class="material-symbols-outlined">expand_more</span></button>
-        <button class="filter-btn">Due Date<span class="material-symbols-outlined">expand_more</span></button>
-      </div>
-
-      <div class="tabs">
-        <a href="#" class="tab active">Timeline</a>
-        <a href="#" class="tab">Tasks</a>
-        <a href="#" class="tab">Brief</a>
-        <a href="#" class="tab">Risk View</a>
-      </div>
-
-      <!-- Timeline -->
-      <section class="timeline">
-        <div class="timeline-header">
-          <div></div>
-          <div class="weeks">
-            <span>Aug W1</span><span>Aug W2</span><span>Aug W3</span><span>Aug W4</span>
-          </div>
-        </div>
-
-        <div class="timeline-body">
-          <div class="row">
-            <div class="label">Design</div>
-            <div class="track">
-              <div class="task" style="left:2%;width:25%;background:#AEC6CF;">Wireframing</div>
-              <div class="task" style="left:28%;width:25%;background:#9EB9C6;">UI Mockups</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="label">Development</div>
-            <div class="track">
-              <div class="task" style="left:25%;width:50%;background:#C3B1E1;">Frontend & Backend Dev</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="label">QA</div>
-            <div class="track">
-              <div class="task" style="left:65%;width:23%;background:#B2D8B2;">Testing & Bug Fixes</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="label">Launch</div>
-            <div class="track">
-              <div class="task" style="left:90%;width:8%;background:#FFDAB9;">Go-Live</div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- AI Suggestions -->
-    <aside class="ai-panel">
-      <h2>AI Suggestions</h2>
-
-      <div class="ai-card success">
-        <span class="material-symbols-outlined">auto_awesome</span>
-        <div>
-          <h3>Optimized Timeline</h3>
-          <p>Added a 2-day buffer for QA. <span class="highlight">(Confidence: 82%)</span></p>
-        </div>
-      </div>
-
-      <div class="ai-card warning">
-        <span class="material-symbols-outlined">warning</span>
-        <div>
-          <h3>Potential Roadblock</h3>
-          <p>API integration might be delayed. Consider parallel tasks.</p>
-        </div>
-      </div>
-
-      <div class="ai-card info">
-        <span class="material-symbols-outlined">arrow_forward</span>
-        <div>
-          <h3>Next Step</h3>
-          <p>Finalize design specs before starting backend integration.</p>
-        </div>
-      </div>
-
-      <div class="brief">
-        <h3>Generated Project Brief</h3>
-        <p>This project aims to overhaul the existing company website to enhance user experience, modernize the design, and improve performance. Key objectives include a mobile-first responsive design, streamlined navigation, and faster page load times...</p>
-        <button class="link">Expand Brief</button>
-      </div>
-    </aside>
-  </div>
-</body>
-</html>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-700 dark:text-gray-300">
+<div class="flex h-screen w-full">
+<!-- Left Sidebar -->
+<aside class="w-64 flex-shrink-0 bg-white dark:bg-gray-900/50 border-r border-gray-200 dark:border-gray-800 flex flex-col">
+<div class="flex h-full min-h-0 flex-col justify-between p-4">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-gradient-to-br from-[#AEC6CF] via-[#C3B1E1] to-[#FFDAB9] rounded-lg size-10" data-alt="A colorful gradient logo mark for Project Palette"></div>
+<div class="flex flex-col">
+<h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Project Palette</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Planner</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary dark:text-white" href="#">
+<span class="material-symbols-outlined">public</span>
+<p class="text-sm font-medium leading-normal">Website Redesign</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200" href="#">
+<span class="material-symbols-outlined">phone_iphone</span>
+<p class="text-sm font-medium leading-normal">Mobile App Launch</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200" href="#">
+<span class="material-symbols-outlined">code_blocks</span>
+<p class="text-sm font-medium leading-normal">API Integration</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<p class="text-sm font-medium leading-normal">Marketing Campaign</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">New Project</span>
+</button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200" href="#">
+<span class="material-symbols-outlined">extension</span>
+<p class="text-sm font-medium leading-normal">Integrations</p>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 flex flex-col min-w-0">
+<div class="p-8 space-y-6 flex-1 overflow-y-auto">
+<!-- Page Heading -->
+<header class="flex flex-wrap items-center justify-between gap-4">
+<h1 class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Website Redesign</h1>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 dark:hover:bg-gray-700">
+<span class="truncate">+ Add Task</span>
+</button>
+</header>
+<!-- Filters -->
+<div class="flex gap-3 overflow-x-auto">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 pl-4 pr-2 hover:bg-gray-50 dark:hover:bg-gray-800">
+<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Priority</p>
+<span class="material-symbols-outlined text-gray-500">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 pl-4 pr-2 hover:bg-gray-50 dark:hover:bg-gray-800">
+<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Assignee</p>
+<span class="material-symbols-outlined text-gray-500">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 pl-4 pr-2 hover:bg-gray-50 dark:hover:bg-gray-800">
+<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Due Date</p>
+<span class="material-symbols-outlined text-gray-500">expand_more</span>
+</button>
+</div>
+<!-- Tabs -->
+<div>
+<div class="flex border-b border-gray-200 dark:border-gray-800 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-gray-900 dark:text-white pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Timeline</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4 hover:text-gray-800 dark:hover:text-gray-200" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Tasks</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4 hover:text-gray-800 dark:hover:text-gray-200" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Brief</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4 hover:text-gray-800 dark:hover:text-gray-200" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Risk View</p>
+</a>
+</div>
+</div>
+<!-- Gantt Chart -->
+<div class="space-y-4 pt-4">
+<!-- Timeline Header -->
+<div class="grid grid-cols-12 gap-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+<div class="col-span-2"></div>
+<div class="col-span-10 grid grid-cols-4 text-center">
+<span>Aug W1</span>
+<span>Aug W2</span>
+<span>Aug W3</span>
+<span>Aug W4</span>
+</div>
+</div>
+<!-- Timeline Rows -->
+<div class="space-y-3">
+<!-- Design Row -->
+<div class="grid grid-cols-12 gap-4 items-center">
+<div class="col-span-2 text-sm font-medium text-gray-800 dark:text-gray-200">Design</div>
+<div class="col-span-10 h-10 bg-gray-100 dark:bg-gray-800/50 rounded-lg relative">
+<div class="absolute top-1 left-[2%] w-1/4 h-8 bg-[#AEC6CF]/80 dark:bg-[#AEC6CF]/60 rounded-lg flex items-center px-3 shadow-sm">
+<p class="text-sm font-medium text-gray-900 truncate">Wireframing</p>
+</div>
+<div class="absolute top-1 left-[28%] w-1/4 h-8 bg-[#AEC6CF] dark:bg-[#AEC6CF]/70 rounded-lg flex items-center px-3 shadow-sm">
+<p class="text-sm font-medium text-gray-900 truncate">UI Mockups</p>
+</div>
+</div>
+</div>
+<!-- Dev Row -->
+<div class="grid grid-cols-12 gap-4 items-center">
+<div class="col-span-2 text-sm font-medium text-gray-800 dark:text-gray-200">Development</div>
+<div class="col-span-10 h-10 bg-gray-100 dark:bg-gray-800/50 rounded-lg relative">
+<div class="absolute top-1 left-[25%] w-1/2 h-8 bg-[#C3B1E1]/80 dark:bg-[#C3B1E1]/60 rounded-lg flex items-center px-3 shadow-sm">
+<p class="text-sm font-medium text-gray-900 truncate">Frontend &amp; Backend Dev</p>
+</div>
+</div>
+</div>
+<!-- QA Row -->
+<div class="grid grid-cols-12 gap-4 items-center">
+<div class="col-span-2 text-sm font-medium text-gray-800 dark:text-gray-200">QA</div>
+<div class="col-span-10 h-10 bg-gray-100 dark:bg-gray-800/50 rounded-lg relative">
+<div class="absolute top-1 left-[65%] w-[23%] h-8 bg-[#B2D8B2]/80 dark:bg-[#B2D8B2]/60 rounded-lg flex items-center px-3 shadow-sm">
+<p class="text-sm font-medium text-gray-900 truncate">Testing &amp; Bug Fixes</p>
+</div>
+</div>
+</div>
+<!-- Launch Row -->
+<div class="grid grid-cols-12 gap-4 items-center">
+<div class="col-span-2 text-sm font-medium text-gray-800 dark:text-gray-200">Launch</div>
+<div class="col-span-10 h-10 bg-gray-100 dark:bg-gray-800/50 rounded-lg relative">
+<div class="absolute top-1 left-[90%] w-[8%] h-8 bg-[#FFDAB9]/80 dark:bg-[#FFDAB9]/60 rounded-lg flex items-center px-3 shadow-sm">
+<p class="text-sm font-medium text-gray-900 truncate">Go-Live</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Right AI Panel -->
+<aside class="w-80 flex-shrink-0 bg-white dark:bg-gray-900/50 border-l border-gray-200 dark:border-gray-800 p-6 space-y-6 overflow-y-auto">
+<h2 class="text-xl font-medium text-gray-900 dark:text-white">AI Suggestions</h2>
+<div class="space-y-4">
+<div class="bg-gray-50 dark:bg-gray-800/70 p-4 rounded-lg flex items-start gap-4 transition hover:shadow-md">
+<div class="bg-green-100 dark:bg-green-900/50 p-2 rounded-full">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 !text-xl">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-medium text-gray-900 dark:text-white">Optimized Timeline</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Added a 2-day buffer for QA. <span class="font-medium text-green-600 dark:text-green-400">(Confidence: 82%)</span></p>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-gray-800/70 p-4 rounded-lg flex items-start gap-4 transition hover:shadow-md">
+<div class="bg-yellow-100 dark:bg-yellow-900/50 p-2 rounded-full">
+<span class="material-symbols-outlined text-yellow-600 dark:text-yellow-400 !text-xl">warning</span>
+</div>
+<div>
+<h3 class="font-medium text-gray-900 dark:text-white">Potential Roadblock</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">API integration might be delayed. Consider parallel tasks.</p>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-gray-800/70 p-4 rounded-lg flex items-start gap-4 transition hover:shadow-md">
+<div class="bg-blue-100 dark:bg-blue-900/50 p-2 rounded-full">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 !text-xl">arrow_forward</span>
+</div>
+<div>
+<h3 class="font-medium text-gray-900 dark:text-white">Next Step</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Finalize design specs before starting backend integration.</p>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<h3 class="text-lg font-medium text-gray-900 dark:text-white mb-3">Generated Project Brief</h3>
+<div class="bg-gray-50 dark:bg-gray-800/70 p-4 rounded-lg space-y-3">
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            This project aims to overhaul the existing company website to enhance user experience, modernize the design, and improve performance. Key objectives include a mobile-first responsive design, streamlined navigation, and faster page load times...
+          </p>
+<button class="text-sm font-bold text-primary hover:underline">
+            Expand Brief
+          </button>
+</div>
+</div>
+</aside>
+</div>
+</body></html>
