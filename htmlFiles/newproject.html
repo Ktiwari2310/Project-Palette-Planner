@@ -116,4 +116,40 @@
 </div>
 </main>
 </div>
+<script>
+document.querySelector('button.bg-primary').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // Collect values from the form fields
+  const title = document.querySelector('input[placeholder="e.g., Q4 Website Redesign"]').value.trim();
+  const description = document.querySelector('textarea').value.trim();
+  const manager = document.querySelector('select').value.trim();
+
+  // Basic validation
+  if (!title || !description || manager === "Select a team member") {
+    alert("Please fill in all fields before creating the project.");
+    return;
+  }
+
+  // Create project object
+  const newProject = {
+    title,
+    description,
+    manager,
+    status: "Not Started",
+    team: Math.floor(Math.random() * 5) + 2, // random team size 2–6
+    progress: 0,
+    dueDate: "TBD"
+  };
+
+  // Get existing projects from localStorage
+  let projects = JSON.parse(localStorage.getItem("projects")) || [];
+  projects.push(newProject);
+  localStorage.setItem("projects", JSON.stringify(projects));
+
+  // Redirect to dashboard
+  window.location.href = "dashboard.html";
+});
+</script>
+
 </body></html>

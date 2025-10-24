@@ -317,4 +317,50 @@
 </aside>
 </div>
 </div>
+<script>
+function renderProjects() {
+  const container = document.querySelector(".grid"); // where all projects appear
+  const projects = JSON.parse(localStorage.getItem("projects")) || [];
+
+  projects.forEach(project => {
+    const card = document.createElement("div");
+    card.className = "bg-white dark:bg-gray-900/50 rounded-xl p-6 space-y-4 border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out transform hover:-translate-y-1";
+
+    card.innerHTML = `
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white">${project.title}</h3>
+        <span class="text-sm font-medium text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900/30 px-3 py-1 rounded-full">${project.status}</span>
+      </div>
+      <p class="text-gray-600 dark:text-gray-400 text-sm">${project.description}</p>
+      <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+        <div class="flex items-center gap-1">
+          <span class="material-symbols-outlined text-base">calendar_month</span>
+          <span>Due: ${project.dueDate}</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <span class="material-symbols-outlined text-base">person</span>
+          <span>Team: ${project.team}</span>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Progress:</p>
+        <div class="relative h-2 bg-gray-100 dark:bg-gray-800 rounded-full">
+          <div class="h-full bg-primary rounded-full" style="width: ${project.progress}%;"></div>
+        </div>
+      </div>
+      <div class="flex justify-end pt-2">
+        <button class="text-primary text-sm font-medium hover:underline flex items-center gap-1">
+          <span>View Details</span>
+          <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+        </button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+// Load projects once dashboard is ready
+window.addEventListener("DOMContentLoaded", renderProjects);
+</script>
+
 </body></html>
