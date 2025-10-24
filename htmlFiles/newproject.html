@@ -1,155 +1,182 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Create a New Project - Project Palette Planner</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
 <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#8c8cf2",
-            "background-light": "#f6f6f8",
-            "background-dark": "#111121",
-          },
-          fontFamily: {
-            "display": ["Inter", "sans-serif"]
-          },
-          borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
-        },
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#8c8cf2",
+        "background-light": "#f6f6f8",
+        "background-dark": "#111121",
       },
-    }
-  </script>
+      fontFamily: {
+        "display": ["Inter", "sans-serif"]
+      },
+      borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+    },
+  },
+}
+</script>
+
 <style>
-    .material-symbols-outlined {
-      font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24
-    }
-    .material-symbols-outlined.fill {
-      font-variation-settings:
-      'FILL' 1
-    }
-  </style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+.material-symbols-outlined.fill {
+  font-variation-settings:
+  'FILL' 1
+}
+</style>
 </head>
+
 <body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-50">
 <div class="relative flex min-h-screen w-full flex-row">
-
-<!-- Main Content -->
 <main class="flex-1 p-8 sm:p-12">
 <div class="mx-auto flex max-w-4xl flex-col gap-8">
-<!-- PageHeading -->
+
+<!-- Page Heading -->
 <div>
-<h1 class="text-slate-900 dark:text-slate-50 text-4xl font-black leading-tight tracking-[-0.033em]">Create a New Project</h1>
-<p class="text-slate-500 dark:text-slate-400 mt-2">Fill in the details below to get your new project up and running.</p>
+  <h1 class="text-slate-900 dark:text-slate-50 text-4xl font-black leading-tight tracking-[-0.033em]">
+    Create a New Project
+  </h1>
+  <p class="text-slate-500 dark:text-slate-400 mt-2">
+    Fill in the details below to get your new project up and running.
+  </p>
 </div>
-<!-- Form container -->
-<div class="flex flex-col gap-6">
-<!-- Project Title TextField -->
-<label class="flex flex-col">
-<p class="text-base font-medium leading-normal pb-2 text-slate-900 dark:text-slate-50">Project Title</p>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-4 text-base font-normal leading-normal" placeholder="e.g., Q4 Website Redesign" value=""/>
-</label>
-<!-- Project Description TextField -->
-<label class="flex flex-col">
-<p class="text-base font-medium leading-normal pb-2 text-slate-900 dark:text-slate-50">Project Description</p>
-<textarea class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800/50 min-h-36 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-4 text-base font-normal leading-normal" placeholder="Briefly describe the project's main goals and target outcomes..."></textarea>
-</label>
-<!-- Project Manager TextField -->
-<label class="flex flex-col">
-<p class="text-base font-medium leading-normal pb-2 text-slate-900 dark:text-slate-50">Project Manager</p>
-<select class="form-select flex w-full min-w-0 flex-1 appearance-none resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-4 text-base font-normal leading-normal">
-<option>Select a team member</option>
-<option>Alex Johnson</option>
-<option>Maria Garcia</option>
-<option>Chen Wei</option>
-</select>
-</label>
-<!-- Project Phases (New Component) -->
-<div class="flex flex-col gap-3">
-<p class="text-base font-medium leading-normal text-slate-900 dark:text-slate-50">Project Phases</p>
-<div class="flex flex-col gap-3">
-<!-- Added Phase Item -->
-<div class="flex items-center gap-2 rounded-lg bg-white dark:bg-slate-800/50 p-2 border border-slate-200 dark:border-slate-700">
-<span class="material-symbols-outlined cursor-grab text-slate-400 dark:text-slate-500">drag_indicator</span>
-<p class="flex-1 text-slate-800 dark:text-slate-200 text-sm">Discovery &amp; Research</p>
-<button class="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400">
-<span class="material-symbols-outlined text-base">close</span>
-</button>
-</div>
-<!-- Added Phase Item -->
-<div class="flex items-center gap-2 rounded-lg bg-white dark:bg-slate-800/50 p-2 border border-slate-200 dark:border-slate-700">
-<span class="material-symbols-outlined cursor-grab text-slate-400 dark:text-slate-500">drag_indicator</span>
-<p class="flex-1 text-slate-800 dark:text-slate-200 text-sm">UI/UX Design</p>
-<button class="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400">
-<span class="material-symbols-outlined text-base">close</span>
-</button>
-</div>
-</div>
-<div class="flex items-center gap-3">
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800/50 h-12 placeholder:text-slate-400 dark:placeholder:text-slate-500 px-4 text-base font-normal leading-normal" placeholder="Add a new phase..." value=""/>
-<button class="flex items-center justify-center gap-2 rounded-lg h-12 px-4 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700">
-<span class="material-symbols-outlined text-lg">add</span>
-<span>Add Phase</span>
-</button>
-</div>
-</div>
-<!-- Action Bar -->
-<div class="flex items-center justify-end gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 text-slate-700 dark:text-slate-200 text-sm font-bold leading-normal tracking-wide hover:bg-slate-100 dark:hover:bg-slate-800">
-<span class="truncate">Cancel</span>
-</button>
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-wide shadow-sm hover:opacity-90 transition-opacity">
-<span class="truncate">Create Project</span>
-</button>
-</div>
-</div>
+
+<!-- Form Container -->
+<form class="flex flex-col gap-6">
+
+  <!-- Project Title -->
+  <label class="flex flex-col">
+    <p class="text-base font-medium pb-2">Project Title</p>
+    <input class="form-input rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-4 h-14 focus:ring-2 focus:ring-primary/50" placeholder="e.g., Q4 Website Redesign" type="text" id="project-title"/>
+  </label>
+
+  <!-- Project Description -->
+  <label class="flex flex-col">
+    <p class="text-base font-medium pb-2">Project Description</p>
+    <textarea class="form-input rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-4 min-h-36 focus:ring-2 focus:ring-primary/50" placeholder="Briefly describe the project's main goals and target outcomes..." id="project-description"></textarea>
+  </label>
+
+  <!-- Project Manager -->
+  <label class="flex flex-col relative">
+    <p class="text-base font-medium pb-2">Project Manager</p>
+    <select class="form-select rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-4 h-14 appearance-none focus:ring-2 focus:ring-primary/50" id="project-manager">
+      <option>Select a team member</option>
+      <option>Alex Johnson</option>
+      <option>Maria Garcia</option>
+      <option>Chen Wei</option>
+    </select>
+    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500 dark:text-slate-400">
+      <span class="material-symbols-outlined">expand_more</span>
+    </div>
+  </label>
+
+  <!-- Due Date -->
+  <div>
+    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2" for="due-date">Due Date</label>
+    <div class="relative">
+      <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+        <span class="material-symbols-outlined text-slate-400 dark:text-slate-500">calendar_today</span>
+      </div>
+      <input class="block w-full rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 pl-10 placeholder-slate-400 dark:placeholder-slate-500" id="due-date" type="date"/>
+    </div>
+  </div>
+
+  <!-- Team Members -->
+  <div>
+    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2" for="team-members">Number of Team Members</label>
+    <div class="relative">
+      <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+        <span class="material-symbols-outlined text-slate-400 dark:text-slate-500">group</span>
+      </div>
+      <input class="block w-full rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 pl-10 placeholder-slate-400 dark:placeholder-slate-500" id="team-members" type="number" min="1" placeholder="e.g., 5"/>
+    </div>
+  </div>
+
+  <!-- Project Phases -->
+  <div>
+    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Project Phases</label>
+    <div class="space-y-2">
+      <div class="flex items-center space-x-2 p-3 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600">
+        <span class="material-symbols-outlined cursor-grab text-slate-400 dark:text-slate-500">drag_indicator</span>
+        <span class="flex-grow text-sm text-slate-800 dark:text-slate-200">Discovery & Research</span>
+        <button class="text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300" type="button">
+          <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+        </button>
+      </div>
+      <div class="flex items-center space-x-2 p-3 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600">
+        <span class="material-symbols-outlined cursor-grab text-slate-400 dark:text-slate-500">drag_indicator</span>
+        <span class="flex-grow text-sm text-slate-800 dark:text-slate-200">UI/UX Design</span>
+        <button class="text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300" type="button">
+          <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+        </button>
+      </div>
+      <div class="flex items-center space-x-2 pt-2">
+        <input class="flex-grow block w-full rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 placeholder-slate-400 dark:placeholder-slate-500" placeholder="Add a new phase..." type="text"/>
+        <button class="flex-shrink-0 flex items-center justify-center px-4 py-2.5 border border-slate-300 dark:border-slate-600 text-sm font-medium rounded shadow-sm text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="button">
+          <span class="material-symbols-outlined text-base mr-2">add</span>
+          Add Phase
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="flex items-center justify-end space-x-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+    <button type="button" class="px-6 py-2.5 text-sm font-semibold text-slate-600 dark:text-slate-300 rounded hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+      Cancel
+    </button>
+    <button type="submit" class="px-6 py-2.5 text-sm font-semibold text-white bg-primary rounded shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+      Create Project
+    </button>
+  </div>
+
+</form>
 </div>
 </main>
 </div>
+
 <script>
-document.querySelector('button.bg-primary').addEventListener('click', function (e) {
+document.querySelector('form').addEventListener('submit', function (e) {
   e.preventDefault();
 
-  // Collect values from the form fields
-  const title = document.querySelector('input[placeholder="e.g., Q4 Website Redesign"]').value.trim();
-  const description = document.querySelector('textarea').value.trim();
-  const manager = document.querySelector('select').value.trim();
+  const title = document.getElementById('project-title').value.trim();
+  const description = document.getElementById('project-description').value.trim();
+  const manager = document.getElementById('project-manager').value.trim();
+  const dueDate = document.getElementById('due-date').value.trim();
+  const team = document.getElementById('team-members').value.trim();
 
-  // Basic validation
-  if (!title || !description || manager === "Select a team member") {
+  if (!title || !description || manager === "Select a team member" || !dueDate || !team) {
     alert("Please fill in all fields before creating the project.");
     return;
   }
 
-  // Create project object
-  const newProject = {
-    title,
-    description,
-    manager,
-    status: "Not Started",
-    team: Math.floor(Math.random() * 5) + 2, // random team size 2–6
-    progress: 0,
-    dueDate: "TBD"
-  };
+  const newProject = { title, description, manager, dueDate, team, status: "Not Started", progress: 0 };
 
-  // Get existing projects from localStorage
   let projects = JSON.parse(localStorage.getItem("projects")) || [];
   projects.push(newProject);
   localStorage.setItem("projects", JSON.stringify(projects));
 
-  // Redirect to dashboard
   window.location.href = "dashboard.html";
 });
 </script>
 
-</body></html>
+</body>
+</html>
