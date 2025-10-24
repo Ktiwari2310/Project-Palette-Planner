@@ -79,9 +79,11 @@ tailwind.config = {
     <p class="text-base font-medium pb-2">Project Manager</p>
     <select class="form-select rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-4 h-14 appearance-none focus:ring-2 focus:ring-primary/50" id="project-manager">
       <option>Select a team member</option>
-      <option>Alex Johnson</option>
-      <option>Maria Garcia</option>
-      <option>Chen Wei</option>
+      <option>Khushboo Tiwari</option>
+      <option>Fuzail Khan</option>
+      <option>Rishika Singh</option>
+      <option>Arwa Vasaiwala</option>
+      <option>Manini Utekar</option>
     </select>
     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500 dark:text-slate-400">
       <span class="material-symbols-outlined">expand_more</span>
@@ -112,41 +114,36 @@ tailwind.config = {
 
   <!-- Project Phases -->
   <div>
-    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Project Phases</label>
-    <div class="space-y-2">
-      <div class="flex items-center space-x-2 p-3 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600">
-        <span class="material-symbols-outlined cursor-grab text-slate-400 dark:text-slate-500">drag_indicator</span>
-        <span class="flex-grow text-sm text-slate-800 dark:text-slate-200">Discovery & Research</span>
-        <button class="text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300" type="button">
-          <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
-        </button>
-      </div>
-      <div class="flex items-center space-x-2 p-3 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600">
-        <span class="material-symbols-outlined cursor-grab text-slate-400 dark:text-slate-500">drag_indicator</span>
-        <span class="flex-grow text-sm text-slate-800 dark:text-slate-200">UI/UX Design</span>
-        <button class="text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300" type="button">
-          <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
-        </button>
-      </div>
-      <div class="flex items-center space-x-2 pt-2">
-        <input class="flex-grow block w-full rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 placeholder-slate-400 dark:placeholder-slate-500" placeholder="Add a new phase..." type="text"/>
-        <button class="flex-shrink-0 flex items-center justify-center px-4 py-2.5 border border-slate-300 dark:border-slate-600 text-sm font-medium rounded shadow-sm text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="button">
-          <span class="material-symbols-outlined text-base mr-2">add</span>
-          Add Phase
-        </button>
-      </div>
+    
+  <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Project Phases</label>
+  <div class="space-y-2" id="phases-container">
+  <div id="phases-list">
+    <!-- Dynamic phase elements will go here -->
+  </div>
+
+    <!-- Add new phase -->
+    <div class="flex items-center space-x-2 pt-2">
+      <input id="new-phase-input" class="flex-grow block w-full rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 placeholder-slate-400 dark:placeholder-slate-500" placeholder="Add a new phase..." type="text"/>
+      <button id="add-phase-btn" class="flex-shrink-0 flex items-center justify-center px-4 py-2.5 border border-slate-300 dark:border-slate-600 text-sm font-medium rounded shadow-sm text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="button">
+        <span class="material-symbols-outlined text-base mr-2">add</span>
+        Add Phase
+      </button>
     </div>
+  </div>
+</div>
+
   </div>
 
   <!-- Action Buttons -->
-  <div class="flex items-center justify-end space-x-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-    <button type="button" class="px-6 py-2.5 text-sm font-semibold text-slate-600 dark:text-slate-300 rounded hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-      Cancel
-    </button>
-    <button type="submit" class="px-6 py-2.5 text-sm font-semibold text-white bg-primary rounded shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-      Create Project
-    </button>
-  </div>
+ <div class="flex items-center justify-end space-x-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+  <button type="button" class="h-12 px-6 text-sm font-semibold text-slate-600 dark:text-slate-300 rounded hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+    Cancel
+  </button>
+  <button type="submit" class="h-12 px-6 text-sm font-semibold text-white bg-primary rounded shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+    Create Project
+  </button>
+</div>
+
 
 </form>
 </div>
@@ -176,6 +173,63 @@ document.querySelector('form').addEventListener('submit', function (e) {
 
   window.location.href = "dashboard.html";
 });
+
+const phasesContainer = document.getElementById('phases-container');
+const addPhaseBtn = document.getElementById('add-phase-btn');
+const newPhaseInput = document.getElementById('new-phase-input');
+
+// Function to create a phase element
+function createPhaseElement(name) {
+  const div = document.createElement('div');
+  div.className = 'flex items-center space-x-2 p-3 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600';
+  
+  const dragIcon = document.createElement('span');
+  dragIcon.className = 'material-symbols-outlined cursor-grab text-slate-400 dark:text-slate-500';
+  dragIcon.textContent = 'drag_indicator';
+  
+  const input = document.createElement('input');
+  input.className = 'flex-grow bg-transparent border-none text-slate-800 dark:text-slate-200 text-sm focus:outline-none';
+  input.value = name;
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.type = 'button';
+  deleteBtn.className = 'text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300';
+  deleteBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size:20px;">close</span>';
+  deleteBtn.addEventListener('click', () => div.remove());
+
+  div.appendChild(dragIcon);
+  div.appendChild(input);
+  div.appendChild(deleteBtn);
+
+  return div;
+}
+
+// Add new phase
+addPhaseBtn.addEventListener('click', () => {
+  const name = newPhaseInput.value.trim();
+  if (!name) return;
+  const phaseEl = createPhaseElement(name);
+  phasesContainer.insertBefore(phaseEl, newPhaseInput.parentElement); // insert before input area
+  newPhaseInput.value = '';
+});
+
+
+const newProject = {
+  title: title,
+  description: description,
+  manager: manager,
+  dueDate: dueDate,
+  team: team,
+  phases: [], // optional if you add phases dynamically
+  tasks: [],  // optional if you add tasks dynamically
+  status: "Not Started",
+  progress: 0
+};
+
+let projects = JSON.parse(localStorage.getItem("projects")) || [];
+projects.push(newProject);
+localStorage.setItem("projects", JSON.stringify(projects));
+
 </script>
 
 </body>
