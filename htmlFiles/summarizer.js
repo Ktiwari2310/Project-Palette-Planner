@@ -10,12 +10,11 @@ document.getElementById("summarizeBtn").addEventListener("click", async () => {
   outputDiv.textContent = "Summarizing... ⏳";
 
   try {
-    // ⚡ Replace with your real API endpoint
     const response = await fetch("https://api.example.com/summarize", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // "Authorization": "Bearer YOUR_API_KEY" if needed
+      
       },
       body: JSON.stringify({ text: input })
     });
