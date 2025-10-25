@@ -1,4 +1,4 @@
-document.getElementById("summarizeBtn").addEventListener("click", async () => {
+document.getElementById("summarizeBtn").addEventListener("click", () => {
   const input = document.getElementById("userInput").value;
   const outputDiv = document.getElementById("summaryOutput");
 
@@ -9,22 +9,10 @@ document.getElementById("summarizeBtn").addEventListener("click", async () => {
 
   outputDiv.textContent = "Summarizing... ⏳";
 
-  try {
-    // Replace this URL with the actual API endpoint you will use
-    const response = await fetch("https://api.example.com/summarize", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // "Authorization": "Bearer YOUR_API_KEY" if needed
-      },
-      body: JSON.stringify({ text: input })
-    });
-
-    const data = await response.json();
-
-    outputDiv.textContent = data.summary || "No summary returned!";
-  } catch (err) {
-    console.error(err);
-    outputDiv.textContent = "Error: Could not summarize. Try again.";
-  }
+  // Fake "summary" after 1 second
+  setTimeout(() => {
+    // Here we just take the first 50 characters as a fake summary
+    const summary = input.length > 50 ? input.slice(0, 50) + "..." : input;
+    outputDiv.textContent = summary;
+  }, 1000);
 });
