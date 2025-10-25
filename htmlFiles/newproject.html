@@ -174,11 +174,11 @@ const startDateInput = document.getElementById('start-date');
 const weeksInput = document.getElementById('project-weeks');
 const dueDateInput = document.getElementById('due-date');
 
-function calculateEndDate() {
+// Calculate End Date from Start Date + Weeks
+function updateEndDateFromWeeks() {
   const startDate = startDateInput.value;
   const weeks = parseInt(weeksInput.value);
 
-  // Only auto-fill if the user hasn't manually changed the due date
   if (startDate && weeks > 0 && !dueDateInput.dataset.manual) {
     const start = new Date(startDate);
     const end = new Date(start);
@@ -187,17 +187,35 @@ function calculateEndDate() {
   }
 }
 
-// Set a flag if the user manually edits the due date
-dueDateInput.addEventListener('input', () => {
-  dueDateInput.dataset.manual = true;
+// Calculate Weeks from Start Date + End Date
+function updateWeeksFromEndDate() {
+  const startDate = startDateInput.value;
+  const endDate = dueDateInput.value;
+
+  if (startDate && endDate) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const diffDays = Math.round((end - start) / (1000 * 60 * 60 * 24));
+    const calculatedWeeks = Math.ceil(diffDays / 7);
+    weeksInput.value = calculatedWeeks > 0 ? calculatedWeeks : 1;
+  }
+}
+
+// Event listeners
+startDateInput.addEventListener('change', () => {
+  dueDateInput.dataset.manual ? updateWeeksFromEndDate() : updateEndDateFromWeeks();
 });
 
-startDateInput.addEventListener('change', calculateEndDate);
-weeksInput.addEventListener('input', calculateEndDate);
+weeksInput.addEventListener('input', () => {
+  dueDateInput.dataset.manual ? updateWeeksFromEndDate() : updateEndDateFromWeeks();
+});
 
+// User manually edits End Date
+dueDateInput.addEventListener('input', () => {
+  dueDateInput.dataset.manual = true;
+  updateWeeksFromEndDate();
+});
 
-startDateInput.addEventListener('change', calculateEndDate);
-weeksInput.addEventListener('input', calculateEndDate);
 
 // Handle Form Submit
 document.querySelector('form').addEventListener('submit', function (e) {
