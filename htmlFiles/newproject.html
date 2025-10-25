@@ -111,6 +111,16 @@ tailwind.config = {
       <input class="block w-full rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 pl-10 placeholder-slate-400 dark:placeholder-slate-500" id="team-members" type="number" min="1" placeholder="e.g., 5"/>
     </div>
   </div>
+   <!-- Project Duration (Weeks) -->
+  <div>
+    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2" for="project-weeks">Project Duration (in Weeks)</label>
+    <div class="relative">
+      <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+        <span class="material-symbols-outlined text-slate-400 dark:text-slate-500">schedule</span>
+      </div>
+      <input class="block w-full rounded border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 pl-10 placeholder-slate-400 dark:placeholder-slate-500" id="project-weeks" type="number" min="1" placeholder="e.g., 8"/>
+    </div>
+  </div>
 
   <!-- Project Phases -->
   <div>
@@ -159,13 +169,23 @@ document.querySelector('form').addEventListener('submit', function (e) {
   const manager = document.getElementById('project-manager').value.trim();
   const dueDate = document.getElementById('due-date').value.trim();
   const team = document.getElementById('team-members').value.trim();
+  const weeks = document.getElementById('project-weeks').value.trim();
 
-  if (!title || !description || manager === "Select a team member" || !dueDate || !team) {
+  if (!title || !description || manager === "Select a team member" || !dueDate || !team || !weeks) {
     alert("Please fill in all fields before creating the project.");
     return;
   }
 
-  const newProject = { title, description, manager, dueDate, team, status: "Not Started", progress: 0 };
+  const newProject = { 
+    title, 
+    description, 
+    manager, 
+    dueDate, 
+    team, 
+    weeks, 
+    status: "Not Started", 
+    progress: 0 
+  };
 
   let projects = JSON.parse(localStorage.getItem("projects")) || [];
   projects.push(newProject);
@@ -174,11 +194,11 @@ document.querySelector('form').addEventListener('submit', function (e) {
   window.location.href = "dashboard.html";
 });
 
+// Dynamic Phases
 const phasesContainer = document.getElementById('phases-container');
 const addPhaseBtn = document.getElementById('add-phase-btn');
 const newPhaseInput = document.getElementById('new-phase-input');
 
-// Function to create a phase element
 function createPhaseElement(name) {
   const div = document.createElement('div');
   div.className = 'flex items-center space-x-2 p-3 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600';
@@ -204,31 +224,14 @@ function createPhaseElement(name) {
   return div;
 }
 
-// Add new phase
 addPhaseBtn.addEventListener('click', () => {
   const name = newPhaseInput.value.trim();
   if (!name) return;
   const phaseEl = createPhaseElement(name);
-  phasesContainer.insertBefore(phaseEl, newPhaseInput.parentElement); // insert before input area
+  phasesContainer.insertBefore(phaseEl, newPhaseInput.parentElement);
   newPhaseInput.value = '';
 });
-
-
-const newProject = {
-  title: title,
-  description: description,
-  manager: manager,
-  dueDate: dueDate,
-  team: team,
-  phases: [], // optional if you add phases dynamically
-  tasks: [],  // optional if you add tasks dynamically
-  status: "Not Started",
-  progress: 0
-};
-
-let projects = JSON.parse(localStorage.getItem("projects")) || [];
-projects.push(newProject);
-localStorage.setItem("projects", JSON.stringify(projects));
+</script>
 
 </script>
 

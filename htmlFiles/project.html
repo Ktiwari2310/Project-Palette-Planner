@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="project-title-head">Project Palette Planner</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#306ee8",
+            "background-light": "#f9fafb",
+            "background-dark": "#111621",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      font-size: 22px;
+    }
+  </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-700 dark:text-gray-300">
+
+  <div class="flex h-screen w-full">
+
+    <!-- ========== LEFT SIDEBAR ========== -->
+    <aside id="sidebar"
+      class="w-64 flex-shrink-0 bg-white dark:bg-gray-900/50 border-r border-gray-200 dark:border-gray-800 flex flex-col">
+      <div class="flex h-full min-h-0 flex-col justify-between p-4">
+
+        <!-- Sidebar Logo + Title -->
+        <div class="flex flex-col gap-6">
+          <div id="sidebar-header" class="flex items-center gap-3 px-2">
+            <div
+              class="bg-gradient-to-br from-[#AEC6CF] via-[#C3B1E1] to-[#FFDAB9] rounded-lg size-10">
+            </div>
+            <div class="flex flex-col">
+              <h1 class="text-gray-900 dark:text-white text-base font-medium">Project Palette</h1>
+              <p class="text-gray-500 dark:text-gray-400 text-sm">Planner</p>
+            </div>
+          </div>
+
+          <!-- Sidebar Nav -->
+          <nav id="project-list" class="flex flex-col gap-2">
+            Placeholder for dynamically loaded projects 
+           Example (to be generated dynamically):
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-800" href="#">
+              <span class="material-symbols-outlined">public</span>
+              <p class="text-sm font-medium">Website Redesign</p>
+            </a>
+           
+          </nav>
+        </div>
+
+        <!-- New Project Button -->
+        <div class="flex flex-col gap-4">
+          <button
+            class="flex w-full items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold">
+            <a href="newproject.html"><span>New Project</span></a>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ========== MAIN CONTENT AREA ========== -->
+    <main id="main-content" class="flex-1 flex flex-col min-w-0">
+      <div class="p-8 space-y-6 flex-1 overflow-y-auto">
+
+        <!-- Page Header -->
+        <header id="project-header" class="flex flex-wrap items-center justify-between gap-4">
+          <h1 id="project-title"
+            class="text-gray-900 dark:text-white text-4xl font-black tracking-[-0.033em] min-w-72">
+            <!-- Dynamic project name -->
+            [Project Title]
+          </h1>
+
+          <button id="add-task-btn"
+            class="flex items-center justify-center rounded-lg h-10 px-4 bg-gray-200 dark:bg-gray-800 text-sm font-bold hover:bg-gray-300 dark:hover:bg-gray-700">
+            <a href="addtask.html"><span>+ Add Task</span></a>
+          </button>
+        </header>
+
+        <!-- Filters / Tabs Placeholder -->
+        <div id="filters-section" class="hidden">
+          <!-- Filters or Tabs will be dynamically added -->
+        </div>
+
+        <!-- ========== GANTT CHART / TIMELINE ========== -->
+        <section id="timeline-section" class="space-y-4 pt-4">
+          <!-- Timeline Header -->
+          <div id="timeline-header" class="grid grid-cols-12 gap-4 text-sm font-medium text-gray-500">
+            <div class="col-span-2"></div>
+            <div id="timeline-weeks" class="col-span-10 grid grid-cols-4 text-center">
+              <!-- Placeholder week labels -->
+              <span>Week 1</span>
+              <span>Week 2</span>
+              <span>Week 3</span>
+              <span>Week 4</span>
+            </div>
+          </div>
+
+          <!-- Timeline Rows -->
+          <div id="timeline-rows" class="space-y-3">
+            <!-- Example Row (to be dynamically generated)
+            <div class="grid grid-cols-12 gap-4 items-center">
+              <div class="col-span-2 text-sm font-medium">Design</div>
+              <div class="col-span-10 h-10 bg-gray-100 rounded-lg relative">
+                <div class="absolute top-1 left-[10%] w-1/4 h-8 bg-[#AEC6CF]/80 rounded-lg flex items-center px-3 shadow-sm">
+                  <p class="text-sm font-medium text-gray-900 truncate">Wireframing</p>
+                </div>
+              </div>
+            </div>
+            -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ========== RIGHT AI PANEL ========== -->
+    <aside id="ai-panel"
+      class="w-80 flex-shrink-0 bg-white dark:bg-gray-900/50 border-l border-gray-200 dark:border-gray-800 p-6 space-y-6 overflow-y-auto">
+      <h2 class="text-xl font-medium text-gray-900 dark:text-white">AI Suggestions</h2>
+
+      <div id="ai-suggestions" class="space-y-4">
+        <!-- Placeholder for dynamically loaded AI suggestions -->
+      </div>
+
+      <!-- AI Generated Brief -->
+      <div id="ai-brief-section" class="pt-4">
+        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-3">Generated Project Brief</h3>
+        <div class="bg-gray-50 dark:bg-gray-800/70 p-4 rounded-lg space-y-3">
+          <p id="project-brief"
+            class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            [Project brief will be dynamically generated here...]
+          </p>
+          <button id="expand-brief-btn" class="text-sm font-bold text-primary hover:underline">
+            Expand Brief
+          </button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</body>
+
+</html>
