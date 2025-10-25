@@ -178,15 +178,23 @@ function calculateEndDate() {
   const startDate = startDateInput.value;
   const weeks = parseInt(weeksInput.value);
 
-  if (startDate && weeks > 0) {
+  // Only auto-fill if the user hasn't manually changed the due date
+  if (startDate && weeks > 0 && !dueDateInput.dataset.manual) {
     const start = new Date(startDate);
     const end = new Date(start);
     end.setDate(start.getDate() + weeks * 7);
     dueDateInput.value = end.toISOString().split('T')[0];
-  } else {
-    dueDateInput.value = "";
   }
 }
+
+// Set a flag if the user manually edits the due date
+dueDateInput.addEventListener('input', () => {
+  dueDateInput.dataset.manual = true;
+});
+
+startDateInput.addEventListener('change', calculateEndDate);
+weeksInput.addEventListener('input', calculateEndDate);
+
 
 startDateInput.addEventListener('change', calculateEndDate);
 weeksInput.addEventListener('input', calculateEndDate);
