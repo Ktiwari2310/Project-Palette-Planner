@@ -89,9 +89,15 @@
 <h1 class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">API Integration</h1>
 <button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 dark:hover:bg-gray-700">
   <a href="addtask.html"><span class="truncate">+ Add Task</span></a>
-
 </button>
 </header>
+<section class="mt-6 p-4 bg-white dark:bg-gray-900 rounded-lg shadow">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Summarizer Feature</h2>
+<textarea id="userInput" placeholder="Enter text to summarize..." rows="6" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded mb-2"></textarea>
+<button id="summarizeBtn" class="px-4 py-2 bg-primary text-white rounded hover:bg-blue-600">Summarize</button>
+<h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Summary:</h3>
+<div id="summaryOutput" class="p-2 border border-gray-300 dark:border-gray-700 rounded bg-gray-50 dark:bg-gray-800 min-h-[50px]"></div>
+</section>
 <div class="flex gap-3 overflow-x-auto">
 <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 pl-4 pr-2 hover:bg-gray-50 dark:hover:bg-gray-800">
 <p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Priority</p>
@@ -216,4 +222,5 @@
 </div>
 </aside>
 </div>
+<script src="summarizer.js"></script>
 </body></html>
