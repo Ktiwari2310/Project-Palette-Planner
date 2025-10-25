@@ -7,8 +7,24 @@ document.getElementById("summarizeBtn").addEventListener("click", async () => {
     return;
   }
 
-  // Fake summarizer for now
-  setTimeout(() => {
-    outputDiv.textContent = input.split(" ").slice(0, 10).join(" ") + "…";
-  }, 500);
+  outputDiv.textContent = "Summarizing... ⏳";
+
+  try {
+    // Replace this URL with the actual API endpoint you will use
+    const response = await fetch("https://api.example.com/summarize", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // "Authorization": "Bearer YOUR_API_KEY" if needed
+      },
+      body: JSON.stringify({ text: input })
+    });
+
+    const data = await response.json();
+
+    outputDiv.textContent = data.summary || "No summary returned!";
+  } catch (err) {
+    console.error(err);
+    outputDiv.textContent = "Error: Could not summarize. Try again.";
+  }
 });
