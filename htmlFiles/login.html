@@ -107,4 +107,25 @@
 </div>
 </div>
 </div>
+    <script type="module">
+  import { loginUser } from './auth.js';
+
+  const loginBtn = document.getElementById('loginButton'); // your login button selector
+
+  loginBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+
+    try {
+      await loginUser(email, password);
+      alert('Login successful!');
+      window.location.href = 'dashboard.html'; // redirect after login
+    } catch (error) {
+      alert('Login failed: ' + error.message);
+    }
+  });
+</script>
+
 </body></html>
