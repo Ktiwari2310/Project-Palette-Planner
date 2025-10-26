@@ -73,16 +73,16 @@
 <form class="space-y-5">
 <label class="flex flex-col flex-1">
 <p class="text-sm font-medium leading-normal pb-2 text-gray-700 dark:text-gray-300">Full Name</p>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A092E1]/50 border border-gray-300 bg-white focus:border-[#A092E1] dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 h-12 placeholder:text-gray-400 px-4 text-base font-normal leading-normal" required placeholder="Enter your full name" value=""/>
+<input id="signupName" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A092E1]/50 border border-gray-300 bg-white focus:border-[#A092E1] dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 h-12 placeholder:text-gray-400 px-4 text-base font-normal leading-normal" required placeholder="Enter your full name" value=""/>
 </label>
 <label class="flex flex-col flex-1">
 <p class="text-sm font-medium leading-normal pb-2 text-gray-700 dark:text-gray-300">Work Email</p>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A092E1]/50 border border-gray-300 bg-white focus:border-[#A092E1] dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 h-12 placeholder:text-gray-400 px-4 text-base font-normal leading-normal"  required placeholder="you@company.com" type="email" value=""/>
+<input id="signupEmail" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A092E1]/50 border border-gray-300 bg-white focus:border-[#A092E1] dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 h-12 placeholder:text-gray-400 px-4 text-base font-normal leading-normal"  required placeholder="you@company.com" type="email" value=""/>
 </label>
 <label class="flex flex-col flex-1">
 <p class="text-sm font-medium leading-normal pb-2 text-gray-700 dark:text-gray-300">Password</p>
 <div class="flex w-full flex-1 items-stretch rounded-lg shadow-sm">
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A092E1]/50 border border-gray-300 bg-white focus:border-[#A092E1] dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 h-12 placeholder:text-gray-400 px-4 border-r-0 pr-2 text-base font-normal leading-normal" required placeholder="Enter your password" type="password" value=""/>
+<input id="signupPassword" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A092E1]/50 border border-gray-300 bg-white focus:border-[#A092E1] dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 h-12 placeholder:text-gray-400 px-4 border-r-0 pr-2 text-base font-normal leading-normal" required placeholder="Enter your password" type="password" value=""/>
 <div class="text-gray-400 dark:text-gray-500 flex border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 items-center justify-center px-3 rounded-r-lg border-l-0">
 <!-- <span class="material-symbols-outlined cursor-pointer text-xl">visibility</span> -->
 </div>
@@ -91,14 +91,14 @@
 <label class="flex flex-col flex-1">
 <p class="text-sm font-medium leading-normal pb-2 text-gray-700 dark:text-gray-300">Confirm Password</p>
 <div class="flex w-full flex-1 items-stretch rounded-lg shadow-sm">
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A092E1]/50 border border-gray-300 bg-white focus:border-[#A092E1] dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 h-12 placeholder:text-gray-400 px-4 border-r-0 pr-2 text-base font-normal leading-normal"required  placeholder="Confirm your password" type="password" value=""/>
+<input id="signupConfirmPassword" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A092E1]/50 border border-gray-300 bg-white focus:border-[#A092E1] dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 h-12 placeholder:text-gray-400 px-4 border-r-0 pr-2 text-base font-normal leading-normal"required  placeholder="Confirm your password" type="password" value=""/>
 <div class="text-gray-400 dark:text-gray-500 flex border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 items-center justify-center px-3 rounded-r-lg border-l-0">
 <!-- <span class="material-symbols-outlined cursor-pointer text-xl">visibility</span> -->
 </div>
 </div>
 </label>
 <div class="pt-2">
-  <button id="signupButton" type="submit" ...>Create Account</button>
+  <button type="submit" id="signupButton">Create Account</button>
 
 
 </div>
