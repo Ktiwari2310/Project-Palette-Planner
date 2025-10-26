@@ -113,4 +113,27 @@
 </div>
 </div>
 </div>
+    <script type="module">
+  import { signUpUser } from './auth.js';
+
+  const signupBtn = document.getElementById('signupButton'); // your signup button ID or selector
+
+  signupBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('signupName').value.trim();
+    const email = document.getElementById('signupEmail').value.trim();
+    const password = document.getElementById('signupPassword').value;
+    const phone = document.getElementById('signupPhone').value.trim();
+
+    try {
+      await signUpUser(email, password, name, phone);
+      alert('User registered successfully! Please login.');
+      window.location.href = 'login.html'; // redirect to login page
+    } catch (error) {
+      alert('Signup failed: ' + error.message);
+    }
+  });
+</script>
+
 </body></html>
