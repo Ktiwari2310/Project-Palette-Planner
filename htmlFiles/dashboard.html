@@ -191,4 +191,21 @@ window.addEventListener("DOMContentLoaded", renderProjects);
 </script>
 
 
+<script type="module">
+  import { app } from './Config.js';
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+
+  const auth = getAuth(app);
+
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      // Redirect unauthenticated users to login page
+      window.location.href = 'login.html';
+    }
+    // else user is authenticated, allow access to dashboard
+  });
+</script>
+</body>
+</html>
+
 </body></html>
