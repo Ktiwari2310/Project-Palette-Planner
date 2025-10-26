@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     roadblockOutput.textContent = "Checking for potential roadblocks... ⏳";
 
-    // Fake roadblocks for testing
+  
     setTimeout(() => {
       const fakeRoadblocks = [
         "External API rate limits",
