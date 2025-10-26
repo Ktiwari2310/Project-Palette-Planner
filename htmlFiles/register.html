@@ -126,6 +126,7 @@ form.addEventListener('submit', async (e) => {
     const phone = document.getElementById('signupPhone').value.trim();
 
     try {
+        alert('Submitting details');
       await signUpUser(email, password, name, phone);
       alert('User registered successfully! Please login.');
       window.location.href = 'login.html'; // redirect to login page
