@@ -115,10 +115,10 @@
     <script type="module">
   import { signUpUser } from './auth.js';
 
-  const signupBtn = document.getElementById('signupButton'); // your signup button ID or selector
+  const form = document.querySelector('form');
 
-  signupBtn.addEventListener('click', async (e) => {
-    e.preventDefault();
+form.addEventListener('submit', async (e) => {
+  e.preventDefault(); 
 
     const name = document.getElementById('signupName').value.trim();
     const email = document.getElementById('signupEmail').value.trim();
