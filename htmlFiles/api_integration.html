@@ -98,6 +98,13 @@
 <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Summary:</h3>
 <div id="summaryOutput" class="p-2 border border-gray-300 dark:border-gray-700 rounded bg-gray-50 dark:bg-gray-800 min-h-[50px]"></div>
 </section>
+<section class="mt-6 p-4 bg-white dark:bg-gray-900 rounded-lg shadow">
+  <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Roadblocks</h2>
+  <textarea id="roadblockInput" placeholder="Enter task description..." rows="4" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded mb-2"></textarea>
+  <button id="roadblockBtn" class="px-4 py-2 bg-primary text-white rounded hover:bg-blue-600">Generate Roadblocks</button>
+  <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Potential Roadblocks:</h3>
+  <div id="roadblockOutput" class="p-2 border border-gray-300 dark:border-gray-700 rounded bg-gray-50 dark:bg-gray-800 min-h-[50px]"></div>
+</section>
 <div class="flex gap-3 overflow-x-auto">
 <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 pl-4 pr-2 hover:bg-gray-50 dark:hover:bg-gray-800">
 <p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Priority</p>
@@ -223,4 +230,5 @@
 </aside>
 </div>
 <script src="summarizer.js"></script>
+<script src="roadblocks.js"></script>
 </body></html>
