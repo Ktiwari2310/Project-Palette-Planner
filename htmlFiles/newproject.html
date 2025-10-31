@@ -218,7 +218,7 @@ dueDateInput.addEventListener('input', () => {
 
 
 // Handle Form Submit
-document.querySelector('form').addEventListener('submit', function (e) {
+document.querySelector('form').addEventListener('submit', async function (e) {
   e.preventDefault();
 
   const title = document.getElementById('project-title').value.trim();
@@ -246,9 +246,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
     progress: 0 
   };
 
-  let projects = JSON.parse(localStorage.getItem("projects")) || [];
-  projects.push(newProject);
-  localStorage.setItem("projects", JSON.stringify(projects));
+  await saveProjectToFirestore(newProject);
 
   window.location.href = "dashboard.html";
 });
@@ -293,4 +291,42 @@ addPhaseBtn.addEventListener('click', () => {
 </script>
 
 </body>
+<script type="module">
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+  import { app } from './Config.js';
+
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+
+  async function saveProjectToFirestore(project) {
+    const user = auth.currentUser;
+    if (!user) {
+      alert("User not logged in");
+      return;
+    }
+    await addDoc(collection(db, `users/${user.uid}/projects`), project);
+  }
+
+  document.querySelector('form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const newProject = {
+      title: document.getElementById('project-title').value.trim(),
+      description: document.getElementById('project-description').value.trim(),
+      manager: document.getElementById('project-manager').value.trim(),
+      startDate: document.getElementById('start-date').value,
+      dueDate: document.getElementById('due-date').value,
+      weeks: document.getElementById('project-weeks').value,
+      team: document.getElementById('team-members').value,
+      status: "Not Started",
+      progress: 0,
+    };
+
+    await saveProjectToFirestore(newProject);
+
+    window.location.href = "dashboard.html";
+  });
+</script>
+
 </html>
