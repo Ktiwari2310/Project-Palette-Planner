@@ -1,19 +1,18 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("roadblockBtn");
-  const input = document.getElementById("roadblockInput");
-  const output = document.getElementById("roadblockOutput");
+  const summarizeBtn = document.getElementById("summarizeBtn");
+  const userInput = document.getElementById("userInput");
+  const summaryOutput = document.getElementById("summaryOutput");
 
-  // ✅ Use your real Gemini key here:
   const API_KEY = "AIzaSyB8fkjaW_S01YOPavfAprL0ZQ9F_xZoEeI";
 
-  btn.addEventListener("click", async () => {
-    const task = input.value.trim();
-    if (!task) {
-      output.textContent = "Please enter a task description!";
+  summarizeBtn.addEventListener("click", async () => {
+    const text = userInput.value.trim();
+    if (!text) {
+      summaryOutput.textContent = "Please enter some text!";
       return;
     }
 
-    output.textContent = "Generating roadblocks and suggestions... ⚙️";
+    summaryOutput.textContent = "Summarizing... ⏳";
 
     try {
       const response = await fetch(
@@ -22,31 +21,18 @@ window.addEventListener("DOMContentLoaded", () => {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  {
-                    text: `For this task: "${task}", list 3 potential roadblocks and provide specific suggestions or improvements for each one in this format:
-1️⃣ Roadblock: ...
-💡 Suggestion: ...
-2️⃣ Roadblock: ...
-💡 Suggestion: ...
-(keep it concise and professional)`
-                  },
-                ],
-              },
-            ],
+            contents: [{ parts: [{ text: `Summarize this clearly: ${text}` }] }],
           }),
         }
       );
 
       const data = await response.json();
-      const result =
+      const summary =
         data.candidates?.[0]?.content?.parts?.[0]?.text ||
-        "No roadblocks generated.";
-      output.textContent = result;
+        "No summary generated.";
+      summaryOutput.textContent = summary;
     } catch (error) {
-      output.textContent = "Error: " + error.message;
+      summaryOutput.textContent = "Error: " + error.message;
     }
   });
 });
