@@ -6,11 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const summaryOutput = document.getElementById("summaryOutput");
 
-
-
   const API_KEY = "AIzaSyB8fkjaW_S01YOPavfAprL0ZQ9F_xZoEeI"; // Replace with your actual key
-
-
 
   summarizeBtn.addEventListener("click", async () => {
 
@@ -24,11 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
-
     summaryOutput.textContent = "Summarizing... ⏳";
-
-
 
     try {
 
@@ -52,13 +44,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
       );
 
-
-
       const data = await response.json();
 
       console.log("Response data:", data); // 🔍 Log to inspect
-
-
 
       if (data.error) {
 
@@ -66,15 +54,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
       }
 
-
-
       const summary =
 
         data.candidates?.[0]?.content?.parts?.[0]?.text ||
 
         "No summary found";
-
-
 
       summaryOutput.textContent = summary;
 
