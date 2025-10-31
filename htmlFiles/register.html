@@ -112,28 +112,32 @@
 </div>
 </div>
 </div>
-    <script type="module">
+   <script type="module">
   import { signUpUser } from './auth.js';
 
-  const form = document.querySelector('form');
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault(); 
+  document.querySelector('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
     const name = document.getElementById('signupName').value.trim();
     const email = document.getElementById('signupEmail').value.trim();
     const password = document.getElementById('signupPassword').value;
-    //const phone = document.getElementById('signupPhone').value.trim();
-    const phone = 123456789
+    const confirmPassword = document.getElementById('signupConfirmPassword').value;
+    const phone = document.getElementById('signupPhone') ? document.getElementById('signupPhone').value.trim() : '';
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match!');
+      return;
+    }
+
     try {
-        alert('Submitting details');
       await signUpUser(email, password, name, phone);
-      alert('User registered successfully! Please login.');
-      window.location.href = 'login.html'; // redirect to login page
-    } catch (error) {
-      alert('Signup failed: ' + error.message);
+      alert('User registered! Please log in.');
+      window.location.href = 'login.html';
+    } catch (err) {
+      alert('Signup failed: ' + err.message);
     }
   });
 </script>
+
 
 </body></html>
