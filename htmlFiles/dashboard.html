@@ -76,7 +76,11 @@
 
 </main>
 <aside class="w-80 flex-shrink-0 bg-white dark:bg-gray-900/50 border-l border-gray-200 dark:border-gray-800 p-6 space-y-6 overflow-y-auto">
-<h2 class="text-xl font-medium text-gray-900 dark:text-white">AI Suggestions</h2>
+<!--<nav id="project-list" class="flex flex-col gap-2 px-2 py-4 overflow-y-auto"></nav>-->
+
+    <h2 class="text-xl font-medium text-gray-900 dark:text-white">AI Suggestions</h2>
+    <nav id="project-list" class="flex flex-col gap-2 px-2 py-4 overflow-y-auto"></nav>
+
 <div class="space-y-4">
 <div class="bg-gray-50 dark:bg-gray-800/70 p-4 rounded-lg flex items-start gap-4 transition hover:shadow-md">
 <div class="bg-green-100 dark:bg-green-900/50 p-2 rounded-full">
@@ -192,19 +196,35 @@ window.addEventListener("DOMContentLoaded", renderProjects);
 
 
 <script type="module">
-  import { app } from './Config.js';
+  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
   import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+  import { app } from './Config.js';
 
-  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const auth = getAuth();
 
-  onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, async (user) => {
     if (!user) {
-      // Redirect unauthenticated users to login page
       window.location.href = 'login.html';
+      return;
     }
-    // else user is authenticated, allow access to dashboard
+
+    const projectsRef = collection(db, `users/${user.uid}/projects`);
+    const snapshot = await getDocs(projectsRef);
+    const listContainer = document.getElementById('project-list');
+    listContainer.innerHTML = '';
+
+    snapshot.forEach((doc) => {
+      const data = doc.data();
+      const link = document.createElement('a');
+      link.href = "#"; // Or real project link
+      link.innerHTML = `${data["Project Name"] || "Untitled"}`;
+      link.className = "block p-2 hover:bg-gray-100";
+      listContainer.appendChild(link);
+    });
   });
 </script>
+
 </body>
 </html>
 
