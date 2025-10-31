@@ -1,8 +1,8 @@
 window.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("roadblockBtn");
   const input = document.getElementById("roadblockInput");
-  const output = document.getElementById("roadblockOutput")
-  
+  const output = document.getElementById("roadblockOutput");
+
   const API_KEY = "AIzaSyB8fkjaW_S01YOPavfAprL0ZQ9F_xZoEeI";
 
   btn.addEventListener("click", async () => {
@@ -12,11 +12,11 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    output.textContent = "Generating roadblocks and suggestions... ⚙️";
+    output.textContent = "Generating roadblocks and suggestions... ⚙";
 
     try {
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`,
+        https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${API_KEY},
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
 💡 Suggestion: ...
 2️⃣ Roadblock: ...
 💡 Suggestion: ...
-(keep it concise and professional)`
+(keep it concise and professional)`,
                   },
                 ],
               },
@@ -40,10 +40,16 @@ window.addEventListener("DOMContentLoaded", () => {
       );
 
       const data = await response.json();
-      const result =
+      console.log("Response data:", data); // 🔍 Log to inspect
+      const summary =
         data.candidates?.[0]?.content?.parts?.[0]?.text ||
-        "No roadblocks generated.";
-      output.textContent = result;
+        "No roadblocks generated";
+      // Convert markdown-style *bold* to <b> and line breaks to <br>
+      const formatted = summary
+        .replace(/\\(.?)\\*/g, "<b>$1</b>") // bold
+        .replace(/\n/g, "<br>"); // new lines
+
+      output.innerHTML = formatted;
     } catch (error) {
       output.textContent = "Error: " + error.message;
     }
