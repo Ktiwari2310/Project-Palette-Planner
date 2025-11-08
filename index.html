@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Project Palette Planner</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Project Palette Planner</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Poppins:wght@600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
@@ -36,55 +40,68 @@
       },
     }
   </script>
-<style>
+  <style>
     .material-symbols-outlined {
       font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
     }
   </style>
 </head>
-<body class="bg-background-light font-body text-text-dark antialiased">
-<div class="relative w-full min-h-screen overflow-hidden flex flex-col">
-<!-- Background Gradient Blobs -->
-<div class="absolute top-0 -left-64 w-96 h-96 sm:w-[32rem] sm:h-[32rem] lg:w-[48rem] lg:h-[48rem] bg-secondary/20 rounded-full filter blur-3xl opacity-50 animate-pulse"></div>
-<div class="absolute bottom-0 -right-64 w-96 h-96 sm:w-[32rem] sm:h-[32rem] lg:w-[48rem] lg:h-[48rem] bg-accent/20 rounded-full filter blur-3xl opacity-50 animate-pulse animation-delay-4000"></div>
-<div class="absolute top-1/4 right-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-primary/20 rounded-full filter blur-3xl opacity-50 animate-pulse animation-delay-2000"></div>
-<div class="relative z-10 flex flex-col flex-grow">
-<!-- Header -->
-<header class="w-full px-6 sm:px-10 lg:px-20 py-5">
-<div class="max-w-7xl mx-auto flex items-center justify-between">
-<div class="flex items-center gap-3 text-text-dark">
-<span class="material-symbols-outlined text-primary text-3xl">palette</span>
-<h2 class="font-display text-text-dark text-xl font-bold tracking-tighter">Project Palette Planner</h2>
-</div>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-transparent text-text-dark border border-text-dark/20 text-sm font-bold leading-normal tracking-wide transition-all hover:bg-text-dark/5 hover:shadow-sm">
-    <a href="htmlFiles/login.html"><span class="truncate">Log In</span></a>
 
-</button>
-</div>
-</header>
-<!-- Hero Section -->
-<main class="flex-grow flex items-center justify-center px-6">
-<div class="relative z-10 flex flex-col items-center justify-center text-center gap-6 max-w-3xl mx-auto py-20">
-<div class="flex flex-col gap-4">
-<h1 class="font-display text-text-dark text-4xl font-bold leading-tight tracking-tighter sm:text-5xl lg:text-6xl lg:leading-tight">
+<body class="bg-background-light font-body text-text-dark antialiased">
+  <div class="relative w-full min-h-screen overflow-hidden flex flex-col">
+    <!-- Background Gradient Blobs -->
+    <div
+      class="absolute top-0 -left-64 w-96 h-96 sm:w-[32rem] sm:h-[32rem] lg:w-[48rem] lg:h-[48rem] bg-secondary/20 rounded-full filter blur-3xl opacity-50 animate-pulse">
+    </div>
+    <div
+      class="absolute bottom-0 -right-64 w-96 h-96 sm:w-[32rem] sm:h-[32rem] lg:w-[48rem] lg:h-[48rem] bg-accent/20 rounded-full filter blur-3xl opacity-50 animate-pulse animation-delay-4000">
+    </div>
+    <div
+      class="absolute top-1/4 right-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-primary/20 rounded-full filter blur-3xl opacity-50 animate-pulse animation-delay-2000">
+    </div>
+    <div class="relative z-10 flex flex-col flex-grow">
+      <!-- Header -->
+      <header class="w-full px-6 sm:px-10 lg:px-20 py-5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <div class="flex items-center gap-3 text-text-dark">
+            <span class="material-symbols-outlined text-primary text-3xl">palette</span>
+            <h2 class="font-display text-text-dark text-xl font-bold tracking-tighter">Project Palette Planner</h2>
+          </div>
+          <button
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-transparent text-text-dark border border-text-dark/20 text-sm font-bold leading-normal tracking-wide transition-all hover:bg-text-dark/5 hover:shadow-sm">
+            <a href="htmlFiles/login.html"><span class="truncate">Log In</span></a>
+
+          </button>
+        </div>
+      </header>
+      <!-- Hero Section -->
+      <main class="flex-grow flex items-center justify-center px-6">
+        <div class="relative z-10 flex flex-col items-center justify-center text-center gap-6 max-w-3xl mx-auto py-20">
+          <div class="flex flex-col gap-4">
+            <h1
+              class="font-display text-text-dark text-4xl font-bold leading-tight tracking-tighter sm:text-5xl lg:text-6xl lg:leading-tight">
               Your AI-Powered Co-Pilot for Project Management
             </h1>
-<h2 class="text-text-dark/70 text-base font-normal leading-relaxed max-w-2xl mx-auto sm:text-lg">
-              Intelligently plan your next project with AI-driven task automation, predictive timeline generation, and smart resource allocation.
+            <h2 class="text-text-dark/70 text-base font-normal leading-relaxed max-w-2xl mx-auto sm:text-lg">
+              Intelligently plan your next project with AI-driven task automation, predictive timeline generation, and
+              smart resource allocation.
             </h2>
-</div>
-<div class="mt-4">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/30 transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/40">
-    <a href="htmlFiles/register.html"><span class="truncate">Get Started Free</span></a>
+          </div>
+          <div class="mt-4">
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-gradient-to-r from-primary to-secondary text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/30 transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/40">
+              <a href="htmlFiles/register.html"><span class="truncate">Get Started Free</span></a>
 
-</button>
-</div>
-</div>
-</main>
-</div>
-</div>
-</body></html>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>

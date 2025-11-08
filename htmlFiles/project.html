@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -76,8 +77,7 @@
     <main id="main-content" class="flex-1 flex flex-col min-w-0">
       <div class="p-8 space-y-6 flex-1 overflow-y-auto">
         <header id="project-header" class="flex flex-wrap items-center justify-between gap-4">
-          <h1 id="project-title"
-            class="text-gray-900 dark:text-white text-4xl font-black tracking-[-0.033em] min-w-72">
+          <h1 id="project-title" class="text-gray-900 dark:text-white text-4xl font-black tracking-[-0.033em] min-w-72">
             [Project Title]
           </h1>
 
@@ -113,8 +113,7 @@
         <h3 class="text-lg font-bold text-gray-900 border-b pb-1 border-gray-200">📄 Summarizer</h3>
         <textarea id="userInput" placeholder="Enter text to summarize..." rows="6"
           class="w-full p-2 border border-gray-300 rounded"></textarea>
-        <button id="summarizeBtn"
-          class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Summarize</button>
+        <button id="summarizeBtn" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Summarize</button>
         <h4 class="mt-2 text-md font-semibold">Summary:</h4>
         <div id="summaryOutput" class="p-2 border border-gray-300 rounded bg-white min-h-[60px]"></div>
       </section>
@@ -124,8 +123,8 @@
         <h3 class="text-lg font-bold text-gray-900 border-b pb-1 border-gray-200">🚧 Roadblocks</h3>
         <textarea id="roadblockInput" placeholder="Enter task description..." rows="4"
           class="w-full p-2 border border-gray-300 rounded"></textarea>
-        <button id="roadblockBtn"
-          class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Generate Roadblocks</button>
+        <button id="roadblockBtn" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Generate
+          Roadblocks</button>
         <h4 class="mt-2 text-md font-semibold">Potential Roadblocks:</h4>
         <div id="roadblockOutput" class="p-2 border border-gray-300 rounded bg-white min-h-[60px]"></div>
       </section>
@@ -134,8 +133,8 @@
       <div id="ai-brief-section" class="pt-4">
         <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-3">Generated Project Brief</h3>
         <div class="bg-gray-50 dark:bg-gray-800/70 p-4 rounded-lg space-y-3">
-          <p id="project-brief"
-            class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">[Project brief will be dynamically generated here...]</p>
+          <p id="project-brief" class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">[Project brief will be
+            dynamically generated here...]</p>
           <button id="expand-brief-btn" class="text-sm font-bold text-primary hover:underline">Expand Brief</button>
         </div>
       </div>
@@ -145,4 +144,5 @@
   <script src="summarizer.js"></script>
   <script src="roadblocks.js"></script>
 </body>
+
 </html>
