@@ -74,19 +74,19 @@ tailwind.config = {
     <textarea class="form-input rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-4 min-h-36 focus:ring-2 focus:ring-primary/50" placeholder="Briefly describe the project's main goals and target outcomes..." id="project-description"></textarea>
   </label>
 
-  <!-- Project Manager -->
-  <label class="flex flex-col relative">
-    <p class="text-base font-medium pb-2">Project Manager</p>
-    <select class="form-select rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-4 h-14 appearance-none focus:ring-2 focus:ring-primary/50" id="project-manager">
-      <option>Select a team member</option>
-      <option>Khushboo Tiwari</option>
-      <option>Fuzail Khan</option>
-      <option>Rishika Singh</option>
-      <option>Arwa Vasaiwala</option>
-      <option>Manini Utekar</option>
-    </select>
-    
-  </label>
+  
+<!-- Project Manager -->
+<label class="flex flex-col relative">
+  <p class="text-base font-medium pb-2">Project Manager</p>
+  <input 
+    type="text" 
+    id="project-manager" 
+    placeholder="Enter team member name"
+    class="rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-4 h-14 focus:ring-2 focus:ring-primary/50 outline-none"
+  />
+</label>
+
+
 
   <!-- Start Date -->
   <div>
