@@ -83,7 +83,7 @@
       </main>
       <aside
         class="w-80 flex-shrink-0 bg-white dark:bg-gray-900/50 border-l border-gray-200 dark:border-gray-800 p-6 space-y-6 overflow-y-auto">
-        <nav id="project-list" class="flex flex-col gap-2 px-2 py-4 overflow-y-auto"></nav>
+        <!--<nav id="project-list" class="flex flex-col gap-2 px-2 py-4 overflow-y-auto"></nav>-->
 
         <h2 class="text-xl font-medium text-gray-900 dark:text-white">AI Suggestions</h2>
         <nav id="project-list" class="flex flex-col gap-2 px-2 py-4 overflow-y-auto"></nav>
@@ -223,7 +223,7 @@
 
       const projectsRef = collection(db, `users/${user.uid}/projects`);
       const snapshot = await getDocs(projectsRef);
-      const listContainer = document.getElementById('project-list');
+      const listContainer = document.getElementById('projects-container');
       listContainer.innerHTML = '';
 
       snapshot.forEach((doc) => {
