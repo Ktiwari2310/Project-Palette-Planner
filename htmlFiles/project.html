@@ -143,6 +143,54 @@
 
   <script src="summarizer.js"></script>
   <script src="roadblocks.js"></script>
+  <script type="module">
+  import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+  import { app } from './Config.js';
+
+  const db = getFirestore(app);
+  const auth = getAuth();
+
+  // Get project ID from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get("id");
+
+  if (!projectId) {
+    alert("No project selected!");
+    window.location.href = "dashboard.html";
+  }
+
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) {
+      window.location.href = "login.html";
+      return;
+    }
+
+    // Get project document
+    const docRef = doc(db, `users/${user.uid}/projects`, projectId);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+
+      // Update page
+      document.getElementById("project-title").textContent = data.title || "Untitled Project";
+      document.getElementById("project-title-head").textContent = data.title || "Project Palette Planner";
+      document.getElementById("project-brief").textContent = data.description || "No description available";
+
+      // Pre-fill Summarizer & Roadblock text areas
+      document.getElementById("userInput").value = data.description || "";
+      document.getElementById("roadblockInput").value = data.description || "";
+
+      // Optionally auto-trigger summarization
+      // document.getElementById("summarizeBtn").click();
+    } else {
+      alert("Project not found!");
+      window.location.href = "dashboard.html";
+    }
+  });
+</script>
+
 </body>
 
 </html>
